@@ -94,12 +94,18 @@ with tab1:
 
     fig = go.Figure()
 
-    fig.add_trace(go.Histogram(
-        x=data,
-        histnorm="probability",
-        name="Datos",
-        opacity=0.6
-    ))
+ fig.add_trace(go.Histogram(
+    x=data,
+    histnorm="probability",
+    name="Datos",
+    opacity=0.6,
+    marker=dict(
+        line=dict(
+            color='black',   # color del borde
+            width=1.5        # grosor del borde
+        )
+    )
+))
 
     x_vals = np.linspace(min(data), max(data), 100)
 
