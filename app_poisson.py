@@ -29,6 +29,8 @@ modo = st.sidebar.radio(
 
 n = st.sidebar.slider("Tamaño de muestra", 1, 200, 50)
 
+normalizar = st.sidebar.checkbox("Mostrar como probabilidad (0 a 1)")
+
 # Parámetros dinámicos
 if distribucion == "Poisson":
     lambda_val = st.sidebar.number_input("λ (lambda)", min_value=0.0001, value=4.0)
@@ -95,10 +97,11 @@ with tab1:
     st.subheader("Histograma y distribución teórica")
 
     fig = go.Figure()
-    
+    # Definir tipo de normalización
+    histnorm = "probability" if normalizar else None
     fig.add_trace(go.Histogram(
     x=data,
-    histnorm="probability",
+    histnorm=histnorm,
     name="Datos",
     opacity=0.6,
      marker=dict(
