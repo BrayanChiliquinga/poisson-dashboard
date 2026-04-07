@@ -29,8 +29,6 @@ modo = st.sidebar.radio(
 
 n = st.sidebar.slider("Tamaño de muestra", 1, 200, 50)
 
-normalizar = st.sidebar.checkbox("Mostrar como probabilidad (0 a 1)")
-
 # Parámetros dinámicos
 if distribucion == "Poisson":
     lambda_val = st.sidebar.number_input("λ (lambda)", min_value=0.0001, value=4.0)
