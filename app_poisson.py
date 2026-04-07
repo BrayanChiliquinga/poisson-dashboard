@@ -98,7 +98,7 @@ with tab1:
     x=data,
     histnorm="probability",
     name="Datos",
-    opacity=0.6
+    opacity=0.6,
      marker=dict(
         line=dict(
             color='black',   # color del borde
