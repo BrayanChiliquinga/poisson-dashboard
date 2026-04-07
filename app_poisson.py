@@ -203,7 +203,7 @@ if len(freq_obs_valid) > 1:
             
         
     except:
-        st.warning("No hay suficientes datos válidos (freq esperada ≥ 5)")
+        st.warning("No hay suficientes datos válidos para determinar Chi-Cuadrado (freq esperada ≥ 5)")
     
     
     else:
