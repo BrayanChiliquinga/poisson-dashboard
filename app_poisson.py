@@ -184,8 +184,15 @@ with tab2:
 
         st.dataframe(df)
 
+# Filtrar frecuencias válidas
+mask = freq_teo >= 5
+
+freq_obs_valid = freq_obs[mask]
+freq_teo_valid = freq_teo[mask]
+
+if len(freq_obs_valid) > 1:
         try:
-            chi2, p = chisquare(freq_obs, freq_teo)
+            chi2, p = chisquare(freq_obs_valid, freq_teo_valid)
             st.write(f"Chi²: {chi2:.4f}")
             st.write(f"p-valor: {p:.4f}")
 
@@ -195,6 +202,8 @@ with tab2:
                 st.error("Mal ajuste")
         except:
             st.warning("No se pudo calcular Chi-cuadrado")
+    else:
+        st.warning("No hay suficientes datos válidos (freq esperada ≥ 5)")
 
 # ----------------------------------
 # INFORMACIÓN
