@@ -99,6 +99,12 @@ with tab1:
     histnorm="probability",
     name="Datos",
     opacity=0.6
+     marker=dict(
+        line=dict(
+            color='black',   # color del borde
+            width=1.5        # grosor del borde
+        )
+    )
     ))
 
     x_vals = np.linspace(min(data), max(data), 100)
