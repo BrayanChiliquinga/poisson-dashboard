@@ -93,13 +93,13 @@ with tab1:
     st.subheader("Histograma y distribución teórica")
 
     fig = go.Figure()
-
-fig.add_trace(go.Histogram(
+    
+    fig.add_trace(go.Histogram(
     x=data,
     histnorm="probability",
     name="Datos",
     opacity=0.6
-))
+    ))
 
     x_vals = np.linspace(min(data), max(data), 100)
 
