@@ -190,7 +190,7 @@ mask = freq_teo >= 5
 freq_obs_valid = freq_obs[mask]
 freq_teo_valid = freq_teo[mask]
 
-if len(freq_obs_valid) > 1:
+    if len(freq_obs_valid) > 1:
         try:
             chi2, p = chisquare(freq_obs_valid, freq_teo_valid)
             st.write(f"Chi²: {chi2:.4f}")
