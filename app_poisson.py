@@ -94,7 +94,7 @@ with tab1:
 
     fig = go.Figure()
 
- fig.add_trace(go.Histogram(
+fig.add_trace(go.Histogram(
     x=data,
     histnorm="probability",
     name="Datos",
