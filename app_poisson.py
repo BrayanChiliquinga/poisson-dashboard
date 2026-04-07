@@ -53,6 +53,31 @@ np.random.seed(st.session_state.seed)
 # ----------------------------------
 # DATOS
 # ----------------------------------
+with tab5:
+    st.subheader("📋 Datos utilizados en la simulación")
+
+    df_data = pd.DataFrame({
+        "Índice": range(1, len(data)+1),
+        "Valor": data
+    })
+
+    st.dataframe(df_data, use_container_width=True)
+
+    # Estadística rápida
+    st.markdown("### Resumen rápido")
+    st.write(f"Cantidad de datos: {len(data)}")
+    st.write(f"Valor mínimo: {np.min(data):.4f}")
+    st.write(f"Valor máximo: {np.max(data):.4f}")
+
+csv = df_data.to_csv(index=False).encode('utf-8')
+
+st.download_button(
+    "📥 Descargar datos",
+    csv,
+    "datos_simulacion.csv",
+    "text/csv"
+)
+
 data = None
 
 if modo == "Generar aleatoriamente":
@@ -83,7 +108,8 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "📊 Visualización",
     "📈 Estadísticas",
     "📉 Comparación",
-    "📘 Información"
+    "📘 Información",
+    "📋 Datos"
 ])
 
 # ----------------------------------
