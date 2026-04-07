@@ -200,10 +200,14 @@ if len(freq_obs_valid) > 1:
             st.success("Buen ajuste")
         else:
             st.error("Mal ajuste")
-            except:
-                st.warning("No se pudo calcular Chi-cuadrado")
+            
+        
+    except:
+        st.warning("No se pudo calcular Chi-cuadrado")
+    
+    
     else:
-st.warning("No hay suficientes datos válidos (freq esperada ≥ 5)")
+        st.warning("No hay suficientes datos válidos (freq esperada ≥ 5)")
 
 # ----------------------------------
 # INFORMACIÓN
