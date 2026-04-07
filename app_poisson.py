@@ -97,11 +97,10 @@ with tab1:
     st.subheader("Histograma y distribución teórica")
 
     fig = go.Figure()
-    # Definir tipo de normalización
-    histnorm = "probability" if normalizar else None
+
     fig.add_trace(go.Histogram(
     x=data,
-    histnorm=histnorm,
+    histnorm="probability",
     name="Datos",
     opacity=0.6,
      marker=dict(
