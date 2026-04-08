@@ -60,31 +60,31 @@ elif distribucion == "Lognormal":
 
 elif distribucion == "Bernoulli":
     p_ber = st.sidebar.slider("p", 0.0, 1.0, 0.5)
-
+    
     # ----------------------------------
     # NUEVAS DISTRIBUCIONES
     # ----------------------------------
 
-    elif distribucion == "Exponencial":
-        data = -np.log(1 - r) / lambda_exp
+elif distribucion == "Exponencial":
+    data = -np.log(1 - r) / lambda_exp
 
-    elif distribucion == "Weibull":
-        data = gamma_w + beta * (-np.log(1 - r))**(1/alpha)
+elif distribucion == "Weibull":
+    data = gamma_w + beta * (-np.log(1 - r))**(1/alpha)
 
-    elif distribucion == "Gamma":
-        data = np.zeros(n)
-        for i in range(n):
-            prod = 1
-            for _ in range(int(k)):
-                prod *= np.random.uniform(0,1)
+elif distribucion == "Gamma":
+    data = np.zeros(n)
+    for i in range(n):
+        prod = 1
+        for _ in range(int(k)):
+            prod *= np.random.uniform(0,1)
             data[i] = -np.log(prod) / lambda_g
 
-    elif distribucion == "Lognormal":
-        z = np.random.normal(0, 1, n)
-        data = np.exp(mu_ln + sigma_ln * z)
+elif distribucion == "Lognormal":
+    z = np.random.normal(0, 1, n)
+    data = np.exp(mu_ln + sigma_ln * z)
 
-    elif distribucion == "Bernoulli":
-        data = np.where(r <= p_ber, 1, 0)
+elif distribucion == "Bernoulli":
+    data = np.where(r <= p_ber, 1, 0)
 
 # Botón regenerar
 if "seed" not in st.session_state:
