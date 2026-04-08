@@ -30,20 +30,17 @@ modo = st.sidebar.radio(
 )
 
 n = st.sidebar.slider("Tamaño de muestra", 1, 200, 50)
-
 # Parámetros dinámicos
-if modo == "Generar aleatoriamente":
+if distribucion == "Poisson":
+    lambda_val = st.sidebar.number_input("λ (lambda)", min_value=0.0001, value=4.0)
 
-    r = np.random.uniform(0, 1, n)
+elif distribucion == "Binomial":
+    n_bin = st.sidebar.number_input("n (ensayos)", min_value=1, value=10)
+    p_bin = st.sidebar.slider("p", 0.0, 1.0, 0.5)
 
-    if distribucion == "Poisson":
-        data = np.random.poisson(lambda_val, n)
-
-    elif distribucion == "Binomial":
-        data = np.random.binomial(n_bin, p_bin, n)
-
-    elif distribucion == "Normal":
-        data = np.random.normal(mu, sigma, n)
+elif distribucion == "Normal":
+    mu = st.sidebar.number_input("μ", value=0.0)
+    sigma = st.sidebar.number_input("σ", min_value=0.0001, value=1.0)
     
     elif distribucion == "Exponencial":
         lambda_exp = st.sidebar.number_input("λ", min_value=0.0001, value=1.0)
