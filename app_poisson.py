@@ -41,25 +41,25 @@ elif distribucion == "Binomial":
 elif distribucion == "Normal":
     mu = st.sidebar.number_input("μ", value=0.0)
     sigma = st.sidebar.number_input("σ", min_value=0.0001, value=1.0)
-    
-    elif distribucion == "Exponencial":
-        lambda_exp = st.sidebar.number_input("λ", min_value=0.0001, value=1.0)
-    
-    elif distribucion == "Weibull":
-        alpha = st.sidebar.number_input("α (forma)", value=1.5)
-        beta = st.sidebar.number_input("β (escala)", value=1.0)
-        gamma_w = st.sidebar.number_input("γ (localización)", value=0.0)
-    
-    elif distribucion == "Gamma":
-        k = st.sidebar.number_input("k (forma)", min_value=1, value=2)
-        lambda_g = st.sidebar.number_input("λ", min_value=0.0001, value=1.0)
-    
-    elif distribucion == "Lognormal":
-        mu_ln = st.sidebar.number_input("μ", value=0.0)
-        sigma_ln = st.sidebar.number_input("σ", min_value=0.0001, value=1.0)
-    
-    elif distribucion == "Bernoulli":
-        p_ber = st.sidebar.slider("p", 0.0, 1.0, 0.5)
+
+elif distribucion == "Exponencial":
+    lambda_exp = st.sidebar.number_input("λ", min_value=0.0001, value=1.0)
+
+elif distribucion == "Weibull":
+    alpha = st.sidebar.number_input("α (forma)", value=1.5)
+    beta = st.sidebar.number_input("β (escala)", value=1.0)
+    gamma_w = st.sidebar.number_input("γ (localización)", value=0.0)
+
+elif distribucion == "Gamma":
+    k = st.sidebar.number_input("k (forma)", min_value=1, value=2)
+    lambda_g = st.sidebar.number_input("λ", min_value=0.0001, value=1.0)
+
+elif distribucion == "Lognormal":
+    mu_ln = st.sidebar.number_input("μ", value=0.0)
+    sigma_ln = st.sidebar.number_input("σ", min_value=0.0001, value=1.0)
+
+elif distribucion == "Bernoulli":
+    p_ber = st.sidebar.slider("p", 0.0, 1.0, 0.5)
 
     # ----------------------------------
     # NUEVAS DISTRIBUCIONES
