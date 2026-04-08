@@ -200,23 +200,21 @@ with tab2:
 # COMPARACIÓN (CHI)
 # ----------------------------------
 with tab3:
-
     if distribucion in ["Poisson", "Binomial"]:
         valores, freq_obs = np.unique(data.astype(int), return_counts=True)
-
+        
         if distribucion == "Poisson":
             prob = poisson.pmf(valores, lambda_val)
         else:
             prob = binom.pmf(valores, n_bin, p_bin)
-
-        freq_teo = prob * len(data)
-
-        mask = freq_teo >= 5
-
-        if sum(mask) > 1:
-            chi2, p = chisquare(freq_obs[mask], freq_teo[mask])
-            st.write("Chi²:", chi2)
-            st.write("p-valor:", p)
+            
+            freq_teo = prob * len(data)
+            mask = freq_teo >= 5
+            
+            if sum(mask) > 1:
+                chi2, p = chisquare(freq_obs[mask], freq_teo[mask])
+                st.write("Chi²:", chi2)
+                st.write("p-valor:", p)
 
 # ----------------------------------
 # DATOS
