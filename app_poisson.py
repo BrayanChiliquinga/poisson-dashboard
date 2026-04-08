@@ -9,7 +9,7 @@ from scipy.stats import poisson, binom, norm, chisquare, gamma, lognorm
 # ----------------------------------
 st.set_page_config(page_title="Simulador de Distribuciones", layout="wide")
 
-st.title("📊 Simulador Interactivo de Distribuciones")
+st.title("Simulador Interactivo de Distribuciones")
 
 # ----------------------------------
 # SIDEBAR
